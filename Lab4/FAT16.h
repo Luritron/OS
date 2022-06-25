@@ -8,7 +8,7 @@
 #include <memory>
 #include <math.h>
 
-struct FileStructure	// параметри FAT
+struct FileStructure	// FAT parameters
 {
 	std::string file_name;
 	uint16_t attribute;
@@ -23,17 +23,17 @@ struct FileStructure	// параметри FAT
 	uint32_t first_cluster_num;
 	uint32_t size;
 };
-struct FAT16Settings	// додаткові умови оголошення дефектних кластерів
+struct FAT16Settings	// define additional assignement about defective clusters
 {
 	uint16_t cluster_num = 0xffff;
 	uint16_t defect_custer_num = 0x1000;
 };
 
-void addFile(std::string file_name, uint32_t file_size); //створення файлу
-void resizeFile(std::string file_name, uint32_t var); //зміна розміру файлу
-void deleteFile(std::string file_name); // видалення файлу
-void findFile(std::string file_name); //пошук файлу за ідентифікатором
-void tableFAT(); //вивід таблиці пам'яті
-void coutFAT(); // вивід FAT
-void initFAT(); // початкове заповнення таблиці нулями
-void menu(); // інтерфейс для спілкування з користувачем
+void addFile(std::string file_name, uint32_t file_size); // creating file
+void resizeFile(std::string file_name, uint32_t var); // resizing file
+void deleteFile(std::string file_name); // deleting file
+void findFile(std::string file_name); // finding file by indentifier
+void tableFAT(); // output of memory table
+void coutFAT(); // FAT output
+void initFAT(); // first zero initialization 
+void menu(); // user-communication interface
